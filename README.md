@@ -3,7 +3,11 @@
 keeps records of modifications in a repository via snapshots
 - repository is the folder tracked by git
 - HEAD is a reference to the latest commit on checkout branch
-- philosophy -> git is always moving forward ( can revert with a new commit )
+###philosophy 
+- git is always moving forward ( can revert with a new commit )
+- each commit stores a full snapshot of the repository
+- history only for users not for git
+- branches are cheap, use them ubiquitously ( git is designed for collaboration )
 - a git development environment consists of 3 sections: 
 1. working directory
 2. staging area
@@ -24,7 +28,7 @@ keeps records of modifications in a repository via snapshots
      |                  |                 | -- git push --> |
      |                  |                 |                 |
      |                  |                 |                 |
-     |                  |                 | <-- git pull -- |              |
+     |                  |                 | <-- git pull -- |              
      |                  |                 |                 |
      | <-------- git checkout ----------- |                 |
      |                  |                 |                 |
@@ -72,6 +76,13 @@ $ git pull
 $ git remote add origin <server>
 
 
+### releases
+# create a tag
+$ git tag <tagname>
+# view tags
+$ git tag
+
+
 ### logs and status
 $ git log --pretty=oneline
 
@@ -79,12 +90,14 @@ $ git log --pretty=oneline
 ### when things go bad
 # restore working files
 $ git checkout <file/folder> 
-
 # clear all changes from working tree and stage ( use with caution )
 $ git reset --hard
-
+# ammend the history
+$ git commit --ammend ( use with caution )
 
 ### repos within repos ( submodules )
 $ git submodule init --update --recursive
 
+### cleaning repo
+$ git clean -fd
 ``
