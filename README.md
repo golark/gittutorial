@@ -1,9 +1,13 @@
+# Git cheatsheet
+
 ## main concepts
 - Git is a Distributed Version Control System: 
 keeps records of modifications in a repository via snapshots
 - repository is the folder tracked by git
 - HEAD is a reference to the latest commit on checkout branch
-###philosophy 
+
+
+### philosophy 
 - git is always moving forward ( can revert with a new commit )
 - each commit stores a full snapshot of the repository
 - history only for users not for git
@@ -96,6 +100,9 @@ $ git reset --hard
 $ git commit --ammend ( use with caution )
 
 ### repos within repos ( submodules )
+# adding a submodule
+$ $ git submodule add <remote_url> <destination_folder>
+# updating a submodule within the repo
 $ git submodule init --update --recursive
 
 ### cleaning repo
